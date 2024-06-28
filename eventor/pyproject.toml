@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eventor"
+version = "0.1.0"
+dependencies = [
+    "icalendar",
+]
+authors = [{"name" = "Erik Heeren", "email" = "erik.heeren@epfl.ch"}]
+maintainers = [{"name" = "Erik Heeren", "email" = "erik.heeren@epfl.ch"}]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+#[project.optional-dependencies]
+#test = ["pytest", "pytest-cov"]
+
+[project.scripts]
+eventor = "eventor.eventor:main"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E",  # pycodestyle
+		  "F",  # pyflakes
+          "I",  # isort
+          "PL",  # pylint
+]
+
+#[tool.pytest.ini_options]
+#addopts = ["--import-mode=importlib", "-vv", "--disable-warnings", "--cov=hpc_provisioner", "--cov-report", "term", "--cov-report", "xml:coverage.xml", "--junitxml", "unittests.xml"]
